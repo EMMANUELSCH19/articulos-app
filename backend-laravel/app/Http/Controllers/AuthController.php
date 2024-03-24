@@ -31,19 +31,23 @@ class AuthController extends Controller
     }
 
     public function login(Request $request) {
-        // $credentials = $request->validate([
-        //     'email' => 'email|required',
-        //     'password' => 'required'
-        // ]);
+        try {
+            $credentials = $request->validate([
+                'email' => 'email|required',
+                'password' => 'required'
+            ]);
 
-        // if (!Auth::attempt($credentials)) {
-        //     return response()->json(['message' => 'Unauthorized'], 401);
-        // }
+            if (Auth::attempt($credentials)) {
+                $accessToken = Auth::user()->createToken('authToken')->accessToken;
+                return response()->json(['token' => $accessToken], 200);
+            } else {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
 
-        // $accessToken = Auth::user()->createToken('authToken')->accessToken;
-
-        // return response()->json(['token' => $accessToken->plainTextToken], 200);
-
-        return response()->json(['message' => 'login success'], 200);
+        } catch (\Illuminate\Validation\ValidationException $e){
+            return response()->json(['errors' => $e->errors()], 422);
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Internal Server Error'], 500);
+        }
     }
 }
