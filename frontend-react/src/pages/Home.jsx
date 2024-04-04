@@ -21,7 +21,7 @@ function Home() {
 
         {/* BANNER  */}
 
-        {/* CATEGORIAS
+        {/* CATEGORIAS section
         - Buscador
         - Lista de categorias
       */}
