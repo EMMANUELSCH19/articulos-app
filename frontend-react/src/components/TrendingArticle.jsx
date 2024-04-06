@@ -1,6 +1,6 @@
 import React from "react";
 
-function TrendingArticle({ size }) {
+function TrendingArticle() {
   return (
     <article className="bg-slate-300 h-full rounded overflow-hidden">
       <div className="relative h-full">

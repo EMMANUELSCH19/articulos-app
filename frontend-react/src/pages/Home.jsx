@@ -32,7 +32,7 @@ function Home() {
 
         <SearchArticles />
 
-        <div>
+        <div className='mt-4'>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
             {defaultCategories.map((category) => (
               <CategoryCard category={category.name} key={category.id} />
@@ -42,39 +42,50 @@ function Home() {
 
         {/* SLIDER DE ARTICULOS MAS VISTOS */}
 
-        <div className="">
+        <div className="mt-4">
           <h2 className="text-2xl font-bold">Artículos más populares</h2>
-          <div className='grid gap-2 xl:grid-cols-2 md:gap-4'>
+          <div className='grid gap-2 xl:grid-cols-2 md:gap-4 mt-4'>
             <div className="w-full">
-              <TrendingArticle size='large' />
+              <TrendingArticle />
             </div>
             <div className="grid w-full gap-2 md:gap-4">
               <div className="grid md:grid-cols-2 w-full gap-2 md:gap-4">
-                <TrendingArticle size='small' />
-                <TrendingArticle size='small' />
+                <TrendingArticle />
+                <TrendingArticle />
               </div>
               <div className="md:hidden xl:block">
-                <TrendingArticle size='medium' />
+                <TrendingArticle />
               </div>
             </div>
           </div>
         </div>
 
-        <div className="">
-          <div className="">
-            <RecentArticle />
+        <div className="mt-4 lg:flex lg:gap-4">
+          <div className="lg:w-2/3">
+            <h2 className='text-2xl font-bold'>Artículos Recientes</h2>
+            <div className="mt-4 grid md:grid-cols-2 xl:grid-cols-2 gap-4">
+              <RecentArticle />
+              <RecentArticle />
+              <RecentArticle />
+              <RecentArticle />
+              <RecentArticle />
+              <RecentArticle />
+            </div>
           </div>
-          <div className="">
+          <div className="mt-4 lg:mt-0 lg:w-1/3">
             <div className="">
-              <p>Podria Interesarte</p>
-              <div className="">
+              <h3 className='text-2xl font-bold bg-black text-white'>Podria Interesarte</h3>
+              <div className="mt-4 grid gap-4">
+                <InterestingArticle />
+                <InterestingArticle />
                 <InterestingArticle />
               </div>
             </div>
 
-            <div className="">
-              <p>Anuncios</p>
-              <div className="">
+            <div className="mt-4">
+              <p className='text-2xl font-bold bg-black text-white'>Anuncios</p>
+              <div className="mt-4 grid md:grid-cols-2 lg:grid-cols-1 gap-4">
+                <ArticleAds />
                 <ArticleAds />
               </div>
             </div>
