@@ -1,5 +1,13 @@
-import React from 'react'; 
+import React from 'react';
+
+import Header from '../components/Header';
+import Banner from '../components/Banner';
+import SearchArticles from '../components/SearchArticles'
 import CategoryCard from '../components/CategoryCard';
+import TrendingArticle from '../components/TrendingArticle';
+import RecentArticle from '../components/RecentArticle';
+import InterestingArticle from '../components/InterestingArticle';
+import ArticleAds from '../components/ArticleAds';
 
 const defaultCategories = [
   { id: 1, name: 'Deportes' },
@@ -14,36 +22,65 @@ function Home() {
   return (
     <div>
       <h1 className='text-2xl font-bold text-center py-4'>Bienvenido a mi blog</h1>
-      {/* HEADER */}
-      
-      <main className='container m-auto px-10'>
-        
 
-        {/* BANNER  */}
+      <Header />
 
-        {/* CATEGORIAS section
-        - Buscador
-        - Lista de categorias
-      */}
-        
+      <main className='container m-auto px-4 xl:p-0'>
+
+
+        <Banner />
+
+        <SearchArticles />
+
         <div>
-        {/* <SearchArticles /> */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
             {defaultCategories.map((category) => (
-              <CategoryCard key={category.id} category={category} />
-              ))}
+              <CategoryCard category={category.name} key={category.id} />
+            ))}
           </div>
         </div>
 
         {/* SLIDER DE ARTICULOS MAS VISTOS */}
 
-        {/* ARTICULOS EN TENDENCIA DE LOS ULTIMOS 15 DIAS */}
+        <div className="">
+          <h2 className="text-2xl font-bold">Artículos más populares</h2>
+          <div className='grid gap-2 xl:grid-cols-2 md:gap-4'>
+            <div className="w-full">
+              <TrendingArticle size='large' />
+            </div>
+            <div className="grid w-full gap-2 md:gap-4">
+              <div className="grid md:grid-cols-2 w-full gap-2 md:gap-4">
+                <TrendingArticle size='small' />
+                <TrendingArticle size='small' />
+              </div>
+              <div className="md:hidden xl:block">
+                <TrendingArticle size='medium' />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* ARTICULOS RECIENTES */}
+        <div className="">
+          <div className="">
+            <RecentArticle />
+          </div>
+          <div className="">
+            <div className="">
+              <p>Podria Interesarte</p>
+              <div className="">
+                <InterestingArticle />
+              </div>
+            </div>
 
-        {/* PODRIA INTERESARTE */}
+            <div className="">
+              <p>Anuncios</p>
+              <div className="">
+                <ArticleAds />
+              </div>
+            </div>
+          </div>
+        </div>
 
-        {/* ANUNCIOS */}
       </main>
     </div>
   );
