@@ -20,7 +20,7 @@ const defaultCategories = [
 
 function Home() {
   return (
-    <div>
+    <div className='bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 '>
       <h1 className='text-2xl font-bold text-center py-4'>Bienvenido a mi blog</h1>
 
       <Header />
