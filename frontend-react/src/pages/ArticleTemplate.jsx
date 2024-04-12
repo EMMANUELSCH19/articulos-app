@@ -1,6 +1,8 @@
 import React from 'react';
 import Header from '../components/Header';
 import BackgroundArticle from '../components/BackgroundArticle';
+import ArticleContent from '../components/ArticleContent';
+import SocialMedia from '../components/SocialMedia';
 
 function ArticleTemplate() {
 	return (
@@ -15,13 +17,20 @@ function ArticleTemplate() {
 						Anuncios
 					</div>
 					<div className="xl:w-8/12">
-						{/* <ArticleContent /> */}
+						<ArticleContent />
 
 						<div className="">
-							Comparte este artículo:
+							<p className='text-center'>
+								Comparte este artículo:
+							</p>
 
-							{/* <SocialMedia /> */}
+							<div className="flex justify-center space-x-4 p-4">
 
+								<SocialMedia name="Facebook" />
+								<SocialMedia name="Twitter" />
+								<SocialMedia name="Linkedin" />
+
+							</div>
 						</div>
 					</div>
 					<div className="hidden xl:block xl:w-2/12">
