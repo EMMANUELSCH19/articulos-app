@@ -3,7 +3,7 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
-        "build": "laravel build --output public"
+        "build": "npm run build"
     },
     "devDependencies": {
         "@popperjs/core": "^2.11.6",
