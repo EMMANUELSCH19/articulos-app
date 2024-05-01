@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Config from "../Config";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import AuthUser from "./AuthUser";
 
 function Login() {
@@ -26,8 +27,8 @@ function Login() {
         .then(({ data }) => {
           if (data.success) {
             setToken(
-              data.token,
               data.user,
+              data.token,
               data.user.roles[0].name
             );
 

@@ -28,7 +28,6 @@ function App() {
             <Route index element={<PanelAdmin />} />
           </Route>
           <Route path="/client" element={<LayoutClient />} >
-            <Route index element={<HomePage />} />
             <Route index element={<PanelClient />} />
           </Route>
         </Route>

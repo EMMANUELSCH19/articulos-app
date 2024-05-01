@@ -5,11 +5,17 @@ import Config from "../Config";
 function Header() {
   const { getRole, getLogout, getToken } = AuthUser();
 
+
+
   const logoutUser = () => {
     Config.GetLogout()
-      .then(() => {
-        getLogout();
-      });
+      .then(({ data }) => {
+        if (data.success) {
+          getLogout();
+        } else {
+          console.log(data.message)
+        }
+      })
   }
 
   const renderLinks = () => {
