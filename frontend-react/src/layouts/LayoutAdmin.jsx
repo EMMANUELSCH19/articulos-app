@@ -14,11 +14,14 @@ function LayoutAdmin() {
   }, []);
 
   return (
-    <div className="container m-auto">
-      <Header />
+    <div className='bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100'>
+      <div className="container m-auto">
 
-      <h1>LayoutAdmin</h1>
-      <Outlet />
+        <Header />
+
+        <h1>LayoutAdmin</h1>
+        <Outlet />
+      </div>
     </div>
   );
 }

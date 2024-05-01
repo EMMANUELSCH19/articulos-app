@@ -14,11 +14,13 @@ function LayoutClient() {
   }, []);
 
   return (
-    <div>
-      <Header />
+    <div className='bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100'>
+      <div className="container m-auto">
+        <Header />
 
-      <h1>LayoutClient</h1>
-      <Outlet />
+        <h1>LayoutClient</h1>
+        <Outlet />
+      </div>
     </div>
   );
 }
