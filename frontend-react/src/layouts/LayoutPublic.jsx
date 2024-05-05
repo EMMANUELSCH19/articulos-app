@@ -7,11 +7,10 @@ import { Outlet } from 'react-router-dom';
 
 function ArticleTemplate() {
   return (
-    <div className='bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100'>
-      <div className="container m-auto">
-
-        <Header />
-
+    <div>
+      <Header />
+      {/* acomodar el contenido de la pagina porque el header es fixed */}
+      <div className=' mt-20'>
         <Outlet />
       </div>
     </div>

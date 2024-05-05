@@ -18,7 +18,7 @@ const defaultCategories = [
 
 function HomePage() {
   return (
-    <div className='bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100 '>
+    <div className=''>
       <h1 className='text-2xl font-bold text-center py-4'>Bienvenido a mi blog</h1>
 
       <main className='container m-auto px-4 xl:p-0'>
