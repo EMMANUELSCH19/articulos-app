@@ -1,11 +1,12 @@
 import React from "react";
-import Banner from "../components/public/Banner";
+import Banner from "../components/public/banner/Banner";
 import SearchArticles from "../components/public/SearchArticles";
 import CardCategory from "../components/public/CardCategory";
 import TrendingArticle from "../components/public/TrendingArticle";
 import RecentArticle from "../components/public/RecentArticle";
 import InterestingArticle from "../components/public/InterestingArticle";
 import AdsArticle from "../components/public/AdsArticle";
+
 
 const defaultCategories = [
   { id: 1, name: 'Deportes' },
